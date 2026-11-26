@@ -16,6 +16,15 @@ A small, reproducible practice project for UI and API quality checks.
 
 The TestYard source, pinned to a reviewed version, will be included in this repository after the local preflight. Preserve its MIT license and attribution. Do not change the application unless a verified test need requires it.
 
+## Branches and test environment
+
+- `main` is the approved release baseline.
+- `develop` is the integration branch. Work branches use a change type, such as `feat/*`, `fix/*`, or `docs/*`, and open PRs to `develop`.
+- After the local TestYard preflight, GitHub Actions will run the Docker Compose app and Playwright checks on PRs to and pushes to `develop`. The runner is temporary; it starts TestYard for the run, saves real reports, and stops the app afterward.
+- The portfolio can show the latest run and its history. It will not provide an always-on TestYard URL in this first setup.
+
+GitHub Actions standard hosted runners are free for public repositories. A permanent TestYard host is a separate decision: Cloudflare Pages can preview the static portfolio, while Cloudflare Containers requires a paid Workers plan. See [the environment plan](docs/development-environment.md).
+
 ## Planned layout
 
 ```text
